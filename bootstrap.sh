@@ -13,6 +13,16 @@ WORK_DIR=/tmp/dev-station-`date +%s`
 mkdir -p $WORK_DIR
 #cd $WORK_DIR
 
+# Check before installing
+log "Installing Homebrew ...."
+ruby -e "$(curl -fsSkL raw.github.com/mxcl/homebrew/go)"
+
+log "Updating Homebrew ... "
+brew update
+
+log "Installing apple-gcc42"
+brew tap homebrew/dupes
+brew install apple-gcc42
 
 log "Checking for RVM..."
 if [ ! -d ~/.rvm ]; then
