@@ -19,9 +19,9 @@ if [ ! -d ~/.rvm ]; then
   log "RVM not found, installing..."
   curl -L https://get.rvm.io | bash -s stable
 
-  #log "Appending RVM function to your .bash_profile..."
-  #grep "scripts/rvm" ~/.bash_profile >/dev/null 2>&1 || echo '[[ -s "$HOME/.rvm/scripts/rvm" ]] && . "$HOME/.rvm/scripts/rvm" # Load RVM function' >> ~/.bash_profile
-  #. ~/.rvm/scripts/rvm
+  log "Appending RVM function to your .bash_profile..."
+  grep "scripts/rvm" ~/.bash_profile >/dev/null 2>&1 || echo '[[ -s "$HOME/.rvm/scripts/rvm" ]] && . "$HOME/.rvm/scripts/rvm" # Load RVM function' >> ~/.bash_profile
+  . ~/.rvm/scripts/rvm
 fi
 
 if [[ ! $(rvm list | grep -F 1.9.2) ]]; then
