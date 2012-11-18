@@ -18,6 +18,7 @@ log "Checking for RVM..."
 if [ ! -d ~/.rvm ]; then
   log "RVM not found, installing..."
   curl -L https://get.rvm.io | bash -s stable
+  source $HOME/.bash_profile
 fi
 
 if [[ ! $(rvm list | grep -F 1.9.2) ]]; then
