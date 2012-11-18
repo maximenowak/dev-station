@@ -3,7 +3,7 @@
 echo -e "Initializing dev-station..."
 
 function log {
-  echo -e ">> \$1"
+  echo -e ">> $1"
 }
 
 export PATH=$PATH:$HOME/bin
