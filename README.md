@@ -1,0 +1,3 @@
+dev-station is a set of Chef cookbooks and a bash script for bootstrapping a developer workstation on OSX.
+
+For the moment it's not functional ...
