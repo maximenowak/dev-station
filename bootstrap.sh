@@ -1,9 +1,9 @@
 #!/bin/bash
 
-echo -e "\e[1;32mInitializing Lunar Workstation...\e[0m"
+echo -e "Initializing dev-station..."
 
 function log {
-  echo -e "\e[1;31m>> \e[1;34m$1\e[0m"
+  echo -e ">> \$1"
 }
 
 export PATH=$PATH:$HOME/bin
