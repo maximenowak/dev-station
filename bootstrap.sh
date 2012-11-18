@@ -17,11 +17,11 @@ cd $WORK_DIR
 log "Checking for RVM..."
 if [ ! -d ~/.rvm ]; then
   log "RVM not found, installing..."
-  curl -s https://raw.github.com/wayneeseguin/rvm/master/binscripts/rvm-installer -o rvm-installer && chmod +x rvm-installer && ./rvm-installer --version latest || exit 1
+  curl -L https://get.rvm.io | bash -s stable
 
-  log "Appending RVM function to your .bash_profile..."
-  grep "scripts/rvm" ~/.bash_profile >/dev/null 2>&1 || echo '[[ -s "$HOME/.rvm/scripts/rvm" ]] && . "$HOME/.rvm/scripts/rvm" # Load RVM function' >> ~/.bash_profile
-  . ~/.rvm/scripts/rvm
+  #log "Appending RVM function to your .bash_profile..."
+  #grep "scripts/rvm" ~/.bash_profile >/dev/null 2>&1 || echo '[[ -s "$HOME/.rvm/scripts/rvm" ]] && . "$HOME/.rvm/scripts/rvm" # Load RVM function' >> ~/.bash_profile
+  #. ~/.rvm/scripts/rvm
 fi
 
 if [[ ! $(rvm list | grep -F 1.9.2) ]]; then
